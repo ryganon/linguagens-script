@@ -5,3 +5,17 @@ function mudaVisibilidade(id){
     
     document.getElementById(id).style.display="block";
   }
+
+function geoLocalizacao(){
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(exibePosicao);
+  } else { 
+    alert("Deu ruim.");
+  }
+}
+  
+function exibePosicao(position) {
+  document.getElementById("latitude").value = position.coords.latitude;
+  document.getElementById("longitude").value = position.coords.longitude;
+ 
+}
