@@ -52,7 +52,7 @@ function exibePosicao(position) {
   * @param {*} arquivo 
   */
 function carregaCSVLocal(arquivo){
-  
+    
     $.ajax({
         type: "GET",
         //url: "data.txt",
@@ -99,7 +99,7 @@ function carregaCSVRemoto(){
     for (var i=1; i<dadosLinhas.length; i++) {
       var data = dadosLinhas[i].split(',');
       var nome = data[0];
-      var ano = data[7];
+      var ano = data[7] + " / "+ data[2];
       dadosLista += criaElementoLista([nome, ano]);
     }
     document.getElementById("projeto_lista").innerHTML = dadosLista;
