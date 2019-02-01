@@ -87,43 +87,26 @@ function processaCSV(dados){
  */
 function carregaCSVRemoto(){
  
-  var arquivo = 'https://raw.githubusercontent.com/fivethirtyeight/data/master/comic-characters/marvel-wikia-data.csv';
+  window.alert("Coletando da url");  
+  var arquivo = 'https://raw.githubusercontent.com/ryganon/linguagens-script/master/projetos/dashboard-lite/dados.csv';
 
   $.get(arquivo, function( dados ) {
-    var record_num = 12; // total de colunas no CSV  
-    var allTextLines = dados.split(/\r\n|\n/);
-    var entries = allTextLines[0].split(',');
-    var lines = [];
 
-    while (entries.length>0) {
-        var tarr = [];
-        for (var j=0; j<record_num; j++) {
-            tarr.push(entries.shift());
-            //tarr.push(entries);
-        }
-        lines.push(tarr);
-    }
-    lines_subset = lines.slice(0,10);
-    
-    // 0 10 11
-    // criando a lista 
-    // para cada um dos elementos
+    var dadosLinhas = dados.split(/\r\n|\n/);
     var dadosLista = "";
     
-    for(var i=0; i<lines_subset.length; i++) {
-      window.alert(lines_subset[i]);
-      //var data = lines_subset[i].split(',');
-      
-      //var nome = data[0];
-      //var ano = data[7];
-      
-      //dadosLista += criaElementoLista([nome, ano]);
+    // para cada um dos elementos
+    for (var i=1; i<dadosLinhas.length; i++) {
+      var data = dadosLinhas[i].split(',');
+      var nome = data[0];
+      var ano = data[7];
+      dadosLista += criaElementoLista([nome, ano]);
     }
-    //document.getElementById("projeto_lista").innerHTML = dadosLista;
-    
+    document.getElementById("projeto_lista").innerHTML = dadosLista;
   });
 }
 
+ 
 
 /**
  * Criando os elementos de uma lista com o Material Design
