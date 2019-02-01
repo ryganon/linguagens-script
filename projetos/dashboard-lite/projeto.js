@@ -106,7 +106,21 @@ function carregaCSVRemoto(){
   });
 }
 
- 
+/**
+ * Função que carrega um arquivo JSON local.
+ */
+function carregaJSONLocal(){
+  $.getJSON('movies.json', function(data) {
+    
+    dadosLista = "";
+    data.forEach(filme => {
+      dadosLista += criaElementoLista([filme.title, 
+                                       "Posição no rank: "+filme.rank + "/ Id do filme: "+filme.id]);
+    });
+    document.getElementById("projeto_lista").innerHTML = dadosLista;
+  });
+
+} 
 
 /**
  * Criando os elementos de uma lista com o Material Design
