@@ -28,7 +28,7 @@ Link do projeto: https://getmdl.io/templates/index.html
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Aulas - Javascript</title>
+    <title>Projeto Material Design</title>
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -67,20 +67,11 @@ Link do projeto: https://getmdl.io/templates/index.html
     }
     </style>
   </head>
-
   <body>
-
-    <!-- 
-      Conteúdo principal da página
-    -->
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-      
-      <!-- 
-        Cabeçalho da página (lado superior direito) 
-      -->
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Dashboard Aula ADS</span>
+          <span class="mdl-layout-title">Inicial</span>
           <div class="mdl-layout-spacer"></div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
@@ -88,28 +79,19 @@ Link do projeto: https://getmdl.io/templates/index.html
             </label>
             <div class="mdl-textfield__expandable-holder">
               <input class="mdl-textfield__input" type="text" id="search">
-              <label class="mdl-textfield__label" for="search">Procurar...</label>
+              <label class="mdl-textfield__label" for="search">Enter your query...</label>
             </div>
           </div>
-
-          <!-- Botão animado com menu suspenso (...) -->
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
             <i class="material-icons">more_vert</i>
           </button>
-          <!-- Menu suspenso com as opções. 
-            button + id="hdrbtn" -> ul + for="hdrbtn" 
-          -->
           <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
-            <li class="mdl-menu__item">Sobre</li>
-            <li class="mdl-menu__item">Contato</li>
-            <li class="mdl-menu__item">Outras opções</li>
-            <li class="mdl-menu__item">Logout</li>
+            <li class="mdl-menu__item">About</li>
+            <li class="mdl-menu__item">Contact</li>
+            <li class="mdl-menu__item">Legal information</li>
           </ul>
         </div>
       </header>
-      <!-- Fim do cabeçalho da página -->
-
-      <!-- Aqui inicia o menu lateral esquerdo -->
       <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <header class="demo-drawer-header">
           <img src="images/user.jpg" class="demo-avatar">
@@ -129,26 +111,10 @@ Link do projeto: https://getmdl.io/templates/index.html
         </header>
 
         <!--
-          Menu de navegação.
-          Cada um dos elementos é composto por um link e um ícone interno.
-          
-          Sobre os ícones: https://material.io/design/iconography/system-icons.html#design-principles
-
-          Ícones disponíveis:
-          https://material.io/tools/icons/?style=baseline
+          Menu de navegação
         -->
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-          <a class="mdl-navigation__link" href="index_projeto.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
-          
-          <a class="mdl-navigation__link" href="#projeto_dashboard" onclick="mudaVisibilidade('projeto_dashboard')"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assessment</i>Dashboard</a>
-          
-          <a class="mdl-navigation__link" href="#projeto_post" onclick="mudaVisibilidade('projeto_post')"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">book</i>Postagens</a>
-
-          <a class="mdl-navigation__link" href="index_projeto_geo.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">add_location</i>Geolocalização</a>
-
-          <a class="mdl-navigation__link" href="index_projeto_rss.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">list_alt</i>API Arquivos</a>
-
-          <!-- Outros exemplos:
+          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Inbox</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">delete</i>Trash</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Spam</a>
@@ -159,40 +125,9 @@ Link do projeto: https://getmdl.io/templates/index.html
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Social</a>
           <div class="mdl-layout-spacer"></div>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
-          -->
         </nav>
       </div>
-      <!-- Fim do menu lateral esquerdo -->
-
-      <!-- 
-        Aqui fica o conteúdo da página.
-      -->
-      <main class="mdl-layout__content mdl-color--grey-100" id="projeto_main">
-
-          <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid" id="projeto_dashboard" style="display:none">
-              <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
-                <use xlink:href="#piechart" mask="url(#piemask)" />
-                <text x="0.5" y="0.5" font-family="Roboto" font-size="0.3" fill="#888" text-anchor="middle" dy="0.1">10<tspan font-size="0.2" dy="-0.07">%</tspan></text>
-              </svg>
-              <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
-                <use xlink:href="#piechart" mask="url(#piemask)" />
-                <text x="0.5" y="0.5" font-family="Roboto" font-size="0.3" fill="#888" text-anchor="middle" dy="0.1">90<tspan dy="-0.07" font-size="0.2">%</tspan></text>
-              </svg>
-            </div>
-
-            <div class="mdl-card demo-cards mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop" id="projeto_post" style="display:none">
-                <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">
-                  <h2 class="mdl-card__title-text">Aula de Linguagens de Script</h2>
-                </div>
-                <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                  COnteúdoo da aula de javascript.
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                  <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="alert('OK')">Leia mais...</a>
-                </div>
-              </div>
-
-        <!-- 
+      <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid demo-content">
           <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
             <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
@@ -271,14 +206,8 @@ Link do projeto: https://getmdl.io/templates/index.html
             </div>
           </div>
         </div>
-        -->
       </main>
-      <!-- Fim do conteúdo principal da página -->
     </div>
-
-      <!--
-        Elementos gráficos (do dashboard original)  
-      -->
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="position: fixed; left: -1000px; height: -1000px;">
         <defs>
           <mask id="piemask" maskContentUnits="objectBoundingBox">
@@ -326,15 +255,7 @@ Link do projeto: https://getmdl.io/templates/index.html
           </g>
         </defs>
       </svg>
-
-      <!-- Botão suspenso 
       <a href="https://github.com/google/material-design-lite/blob/mdl-1.x/templates/dashboard/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">View Source</a>
-      -->  
-
-    <!-- 
-      Carregando os componentes javascript do Material Design
-    -->  
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <script src="projeto.js"></script>
   </body>
 </html>
