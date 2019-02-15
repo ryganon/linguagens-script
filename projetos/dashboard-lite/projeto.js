@@ -127,7 +127,7 @@ function carregaJSONLocal(){
  */
 function carregaXMLRemoto(){
   
-  urlxml = 'https://gist.githubusercontent.com/Abhishek249/6356baab2a5abb5008b6f836b78522cf/raw/4e49a809a4cf6cfb047616edff8ae39e9394ea3a/movies.xml';
+  urlxml = '';
   
   $.get(urlxml, function(dados){
     parserXML(dados);});
@@ -147,8 +147,8 @@ function parserXML(xml){
   $filmes = $xml.find("Movie");
   
   $filmes.each(function(){
-    titulo = $(this).find('Title').text();
-    genero = $(this).find('Genre').text();
+    titulo = $(this).find('title').text();
+    genero = $(this).find('description').text();
     dadosLista += criaElementoLista([titulo, genero]);
   });
   document.getElementById("projeto_lista").innerHTML = dadosLista;
@@ -186,4 +186,42 @@ function criaElementoLista(dados){
      item_lista += '</span></span></li>'; 
   
  return item_lista;
+}
+
+
+
+/**
+ * Função que carrega um XML de URL
+ */
+function carregaXMLRemotoNoticias(){
+  
+  //urlxml = 'tecnologia_uol.xml';
+  urlxml = 'https://raw.githubusercontent.com/ryganon/linguagens-script/master/projetos/dashboard-lite/tecnologia_uol.xml';
+
+  $.get(urlxml, function(dados){
+    parserXMLNoticias(dados);
+  });
+}
+
+/**
+ * Função que processa os dados de um XML
+ * @param {*} xml 
+ */
+function parserXMLNoticias(xml){
+
+  dadosLista = "";
+  
+  xmlDoc = $.parseXML(xml);
+  $xml = $(xmlDoc);
+  
+  // coletando item: title, link, description, pubDate
+  $filmes = $xml.find("item");
+  
+  $filmes.each(function(){
+    titulo = $(this).find('title').text();
+    descricao = $(this).find('description').text();
+    datapub = $(this).find('pubDate').text();
+    dadosLista += criaElementoLista([titulo, descricao]);
+  });
+  document.getElementById("projeto_lista").innerHTML = dadosLista;
 }
