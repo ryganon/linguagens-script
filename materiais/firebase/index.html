@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aula - Linguagens de Script</title>
+
+    <!-- Estilo baseado em 
+         https://www.w3schools.com/w3css/tryw3css_templates_blog.htm
+    -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+        html body{
+            font-family:  "Raleway", Verdana,sans-serif;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        body, h1, h2, h3, h4, h5 {
+            font-family: "Raleway", sans-serif;
+        }
+        .page_body{
+            color: #000 !important;
+            background-color: #f1f1f1 !important;
+        }
+        .page_div{
+            color: #000 !important;
+            background-color: #fff !important;
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+            box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body class="page_body">
+<h2>Teste Firebase</h2>
+
+<div id="dados" class="page_div">
+    <h4> Cadastrando</h4>
+    <input id="dados_nome"></input> 
+    <input id="dados_email"></input> 
+    
+    <div>
+        <br/>   
+        <button onclick="adicionarDados()">Adicionar</button>
+        <button onclick="listarDadosCadastrados()">Listar</button>
+    </div>
+         
+</div>
+
+<div id="lista" class="page_div">
+
+</div>
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+<script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-firestore.js"></script>
+
+<!-- Confugurações do projeto Firebase-->
+<script src="./js/firebase.js"></script>
+
+<!-- Funcionalidades da página --> 
+<script src="./js/funcionalidades.js"></script>
+
+
+
+
+</body>
+</html>
+
